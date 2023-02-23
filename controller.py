@@ -55,7 +55,27 @@ def show_range(start_date, end_date):
 
 
 def edit_note(note_id):
-    pass
+    try:
+        note_id = int(note_id)
+        if len(controller.notes)>0:
+            no_note = True
+            for element in controller.notes:
+                if element["id"]==note_id:
+                    no_note = False
+                    print("Заметка для редактирования:")
+                    print(element)
+                    new_header = input("Введите новый заголовок: ")
+                    new_content = input("Введите новое содержание: ")
+                    element["header"]=new_header
+                    element["content"]=new_content
+                    element["date"] = datetime.datetime.now().date().strftime("%d-%m-%Y")
+                    element["time"] = datetime.datetime.now().time().strftime("%H:%M")
+            if no_note:
+                print("Заметки с указанным id не найдено")
+        else:
+            print("Список заметок пуст")
+    except Exception:
+        print("Ошибка ввода, введенное значение должно быть положительным целым числом")
 
 
 def remove_note(note_id):
