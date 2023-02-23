@@ -1,4 +1,2 @@
 .idea/
-venv/Lib/
-venv/Scripts/
-venv/__pycache__/
+venv/
