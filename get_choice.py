@@ -1,5 +1,6 @@
 import controller
 
+
 def get_choice(param):
     if param == "1":
         print("------------------------------------------------")
@@ -13,11 +14,11 @@ def get_choice(param):
         controller.show_all()
     elif param == "3":
         print("------------------------------------------------")
-        print("Вывести заметки в диапозоне дат")
+        print("Вывести заметки в диапазоне дат")
         print("------------------------------------------------")
-        start_date = input("Введите дату начала диапозона поиска(MM-DD-YYYY): ")
-        end_date = input("Введите дату окончания диапозона поиска(MM-DD-YYYY): ")
-        controller.show_range(start_date,end_date)
+        start_date = input("Введите дату начала диапазона поиска(DD-MM-YYYY): ")
+        end_date = input("Введите дату окончания диапазона поиска(DD-MM-YYYY): ")
+        controller.show_range(start_date, end_date)
     elif param == "4":
         print("------------------------------------------------")
         print("Редактировать заметку")
