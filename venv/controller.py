@@ -1,8 +1,24 @@
+import controller
+import datetime
+
 notes = []
 id = 0
 
 def new_note():
-    pass
+    header = input("Введите описание заметки: ")
+    content = input("Введите содержание заметки: ")
+    controller.id += 1
+    note = {
+        "id": controller.id,
+        "header": header,
+        "content": content,
+        "date": datetime.datetime.now().date().strftime("%d-%m-%Y"),
+        "time": datetime.datetime.now().time().strftime("%H:%M")
+    }
+    print(note)
+    controller.notes.append(note)
+    print("------------------------------------------------")
+
 
 def show_all():
     pass
