@@ -21,7 +21,13 @@ def new_note():
 
 
 def show_all():
-    pass
+    if len(notes) == 0:
+        print("Сообщения отстутствуют!")
+        print("------------------------------------------------")
+    else:
+        for note in notes:
+            print(note)
+        print("------------------------------------------------")
 
 def show_range(start_date,end_date):
     pass
